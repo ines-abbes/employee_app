@@ -12,7 +12,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Récupération du code source'
-                git branch: 'master',
+                git branch: 'main',
                     credentialsId: 'github-cred',
                     url: 'https://github.com/ines-abbes/emp_app.git'
             }

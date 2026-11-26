@@ -62,7 +62,7 @@ services:
   # ------------------------
   phpmyadmin:
     image: phpmyadmin                 # Image officielle phpMyAdmin
-    container_name: emp_pmadmin_cont
+    container_name: emp_pmadmin_c
     restart: always
     depends_on:
       - db

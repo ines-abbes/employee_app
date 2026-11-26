@@ -12,7 +12,7 @@ services:
     image: emp_backend_img:latest         # Image Docker du backend (doit être buildée avant: docker build -t emp_backend:latest emp_backend/.)
     container_name: emp_backend_c  # Nom du conteneur pour le backend
     ports:
-      - "8090:8050"                   # Expose le port 8050 interne (Spring Boot) sur le port 8090 de la machine hôte
+      - "8095:8050"                   # Expose le port 8050 interne (Spring Boot) sur le port 8090 de la machine hôte
                                    # => L’API sera accessible via http://localhost:8090
     restart: always                   # Relance auto en cas de crash
     depends_on:
@@ -32,7 +32,7 @@ services:
     image: emp_frontend_img:latest        # Image Docker du frontend (doit être buildée avant: docker build -t emp_frontend:latest emp_frontend/.)
     container_name: emp_frontend_c # Nom du conteneur pour le frontend
     ports:
-      - "8070:80"                     # Expose Nginx (port 80 interne) sur 8070 de la machine hôte
+      - "8075:80"                     # Expose Nginx (port 80 interne) sur 8070 de la machine hôte
                                       # => L’app sera accessible via http://localhost:8070
     restart: always
     depends_on:
@@ -67,7 +67,7 @@ services:
     depends_on:
       - db
     ports:
-      - "7080:80"                     # UI phpMyAdmin: http://localhost:8071
+      - "7085:80"                     # UI phpMyAdmin: http://localhost:8071
     environment:
       - PMA_ARBITRARY=1               # Autorise la saisie manuelle de l'hôte MySQL (pratique, mais moins restrictif)
       # Recommandé pour forcer un serveur précis :

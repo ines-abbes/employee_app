@@ -67,7 +67,7 @@ services:
     depends_on:
       - db
     ports:
-      - "8071:80"                     # UI phpMyAdmin: http://localhost:8071
+      - "7080:80"                     # UI phpMyAdmin: http://localhost:8071
     environment:
       - PMA_ARBITRARY=1               # Autorise la saisie manuelle de l'hôte MySQL (pratique, mais moins restrictif)
       # Recommandé pour forcer un serveur précis :
